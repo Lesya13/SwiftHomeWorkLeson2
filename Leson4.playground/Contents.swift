@@ -88,7 +88,7 @@ class SportAuto: Auto {
 class SpolierSportAuto: SportAuto {
     
     func releaseSpolier() {
-        print("Запрещается трогать спойлер!!!")
+        print("Запрещается трогать спойлер!!!!")
     }
 }
 
