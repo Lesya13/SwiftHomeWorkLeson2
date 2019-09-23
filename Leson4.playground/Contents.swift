@@ -20,8 +20,8 @@ enum Trunk {
     case load, unload
 }
 
-enum Spoiler {
-    case release, remove
+enum Spoiler: String {
+    case release = "выпущен", remove = "убран"
 }
 
 class Auto {
@@ -68,7 +68,6 @@ class WarningCargoAuto: CargoAuto {
 var someAuto1 = Auto(color: .black, engine: .start, transmission: .manual, doorState: .close, windowState: .open)
 var someAuto2 = CargoAuto(color: .black, engine: .start, transmission: .manual, doorState: .close, windowState: .open, trunkState: .load)
 
-
 class SportAuto: Auto {
     var spoilerState: Spoiler
     
@@ -79,13 +78,16 @@ class SportAuto: Auto {
     
     func releaseSpoiler() {
         spoilerState = .release
+        print("Спойлер \(spoilerState.rawValue) выпущен")
     }
     
     func removeSpoiler() {
         spoilerState = .remove
+        print("Спойлер \(spoilerState.rawValue) убран")
     }
 }
-class SpolierSportAuto: SportAuto {
+
+class SpoilerSportAuto: SportAuto {
     
     func releaseSpolier() {
         print("Запрещается трогать спойлер!!!")
@@ -94,8 +96,7 @@ class SpolierSportAuto: SportAuto {
 
 var someAuto3 = SportAuto(color: .black, engine: .start, transmission: .manual, doorState: .close, windowState: .open, spoilerState: .release)
 
-
-
-
+someAuto3.releaseSpoiler()
+someAuto3.removeSpoiler()
 
 
