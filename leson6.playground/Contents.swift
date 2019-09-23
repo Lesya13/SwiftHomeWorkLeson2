@@ -30,7 +30,7 @@ struct inStack<Filter> {
     }
     var totalNumber : Int {
         var number = 0
-        for filter in filters {
+        for filter in numbers {
             number += filter.number
             
         return number
